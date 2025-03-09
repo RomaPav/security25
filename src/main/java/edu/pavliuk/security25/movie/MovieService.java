@@ -6,16 +6,30 @@ package edu.pavliuk.security25.movie;/*
     @since 09.03.2025 - 17.01
 */
 
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class MovieService {
 
-    private final MovieRepository movieRepository;
+    private final MovieRepository  movieRepository;
+
+    private final List<Movie> movies = new ArrayList<>();
+
+    @PostConstruct
+    void init() {
+        movies.add(new Movie("1", "Title1", "Description1"));
+        movies.add(new Movie("2", "Title2", "Description2"));
+        movies.add(new Movie("3", "Title3", "Description3"));
+
+        movieRepository.saveAll(movies);
+    }
+
 
     public List<Movie> getAllMovies() {
         return movieRepository.findAll();
