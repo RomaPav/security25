@@ -42,4 +42,20 @@ public class MovieRestController {
     public void deleteMovie(@PathVariable String id) {
         movieService.deleteMovie(id);
     }
+
+    @GetMapping("/user")
+    public String helloUser() {
+        return "Hello, User";
+    }
+
+    @GetMapping("/admin")
+    public String helloAdmin() {
+        return "Hello, Admin";
+    }
+
+    @GetMapping("/unknown")
+    public String helloUnknown() {
+        return "Hello, Unknown";
+    }
+
 }
