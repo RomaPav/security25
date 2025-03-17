@@ -2,10 +2,10 @@ package edu.pavliuk.security25.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 
 /*
@@ -21,12 +21,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(authz -> authz
-                .requestMatchers(HttpMethod.GET, "/api/v1/movies/**").authenticated()
-                .requestMatchers(HttpMethod.POST, "/api/v1/movies/**").authenticated()
-                .requestMatchers(HttpMethod.PUT, "/api/v1/movies/**").authenticated()
-                .requestMatchers(HttpMethod.DELETE, "/api/v1/movies/**").authenticated()
+                .csrf(AbstractHttpConfigurer::disable)
+                .authorizeHttpRequests(auth -> auth
+                        .anyRequest()
+                        .authenticated()
                 )
                 .httpBasic(Customizer.withDefaults());
 
