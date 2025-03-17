@@ -1,0 +1,53 @@
+### GET request to get all movies
+GET http://localhost:8080/api/v1/movies/
+Authorization: Basic admin admin
+Accept: application/json
+
+### GET request to get one movie by id
+GET http://localhost:8080/api/v1/movies/1
+Authorization: Basic admin admin
+Accept: application/json
+
+### request to create movie
+POST http://localhost:8080/api/v1/movies/
+Authorization: Basic YWRtaW46YWRtaW4=
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "4",
+  "title": "Title4",
+  "description": "Description4"
+}
+
+### request to delete one movie by id
+DELETE http://localhost:8080/api/v1/movies/4
+Authorization: Basic admin admin
+Accept: application/json
+
+### request to update movie
+PUT http://localhost:8080/api/v1/movies/
+Authorization: Basic admin admin
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "1",
+  "title": "Title1.1",
+  "description": "Description1.1"
+}
+
+### GET request to get all movies
+GET http://localhost:8080/api/v1/movies/user
+Authorization: Basic admin admin
+Accept: application/json
+
+### GET request to get all movies
+GET http://localhost:8080/api/v1/movies/admin
+Authorization: Basic admin admin
+Accept: application/json
+
+### GET request to get all movies
+GET http://localhost:8080/api/v1/movies/unknown
+Authorization: Basic admin admin
+Accept: application/json
