@@ -1,0 +1,167 @@
+### GET request for admin by admin
+GET http://localhost:8080/api/v1/movies/admin
+Authorization: Basic admin admin
+Accept: application/json
+
+### GET request for admin by user
+GET http://localhost:8080/api/v1/movies/admin
+Authorization: Basic user user
+Accept: application/json
+
+### GET request for admin by unknown
+GET http://localhost:8080/api/v1/movies/admin
+Authorization: Basic unknown unknown
+Accept: application/json
+
+### GET request for user by admin
+GET http://localhost:8080/api/v1/movies/user
+Authorization: Basic admin admin
+Accept: application/json
+
+### GET request for user by user
+GET http://localhost:8080/api/v1/movies/user
+Authorization: Basic user user
+Accept: application/json
+
+### GET request for user by unknown
+GET http://localhost:8080/api/v1/movies/user
+Authorization: Basic unknown unknown
+Accept: application/json
+
+### GET request for unknown by admin
+GET http://localhost:8080/api/v1/movies/unknown
+Authorization: Basic admin admin
+Accept: application/json
+
+### GET request for unknown by user
+GET http://localhost:8080/api/v1/movies/unknown
+Authorization: Basic user user
+Accept: application/json
+
+### GET request for unknown by unknown
+GET http://localhost:8080/api/v1/movies/unknown
+Authorization: Basic unknown unknown
+Accept: application/json
+
+### GET request to get one movie by id by admin
+GET http://localhost:8080/api/v1/movies/1
+Authorization: Basic admin admin
+Accept: application/json
+
+### GET request to get one movie by id by user
+GET http://localhost:8080/api/v1/movies/1
+Authorization: Basic user user
+Accept: application/json
+
+### GET request to get one movie by id by unknown
+GET http://localhost:8080/api/v1/movies/1
+Authorization: Basic unknown unknown
+Accept: application/json
+
+### GET request to get all movies by id by admin
+GET http://localhost:8080/api/v1/movies/
+Authorization: Basic admin admin
+Accept: application/json
+
+### GET request to get all movies by id by user
+GET http://localhost:8080/api/v1/movies/
+Authorization: Basic user user
+Accept: application/json
+
+### GET request to get all movies by id by unknown
+GET http://localhost:8080/api/v1/movies/
+Authorization: Basic unknown unknown
+Accept: application/json
+
+
+
+
+### request to create movie by admin
+POST http://localhost:8080/api/v1/movies/
+Authorization: Basic admin admin
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "4",
+  "title": "Title4",
+  "description": "Description4"
+}
+
+### request to create movie by user
+POST http://localhost:8080/api/v1/movies/
+Authorization: Basic user user
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "4",
+  "title": "Title4",
+  "description": "Description4"
+}
+
+### request to create movie by admin
+POST http://localhost:8080/api/v1/movies/
+Authorization: Basic unknown unknown
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "4",
+  "title": "Title4",
+  "description": "Description4"
+}
+
+
+### request to delete one movie by id by admin
+DELETE http://localhost:8080/api/v1/movies/4
+Authorization: Basic admin admin
+Accept: application/json
+
+### request to delete one movie by id by user
+DELETE http://localhost:8080/api/v1/movies/4
+Authorization: Basic user user
+Accept: application/json
+
+### request to delete one movie by id by unknown
+DELETE http://localhost:8080/api/v1/movies/4
+Authorization: Basic unknown unknown
+Accept: application/json
+
+
+### request to update movie by admin
+PUT http://localhost:8080/api/v1/movies/
+Authorization: Basic admin admin
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "1",
+  "title": "Title1.1",
+  "description": "Description1.1"
+}
+
+### request to update movie by user
+PUT http://localhost:8080/api/v1/movies/
+Authorization: Basic user user
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "1",
+  "title": "Title1.1",
+  "description": "Description1.1"
+}
+
+### request to update movie by unknown
+PUT http://localhost:8080/api/v1/movies/
+Authorization: Basic unknown unknown
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "1",
+  "title": "Title1.1",
+  "description": "Description1.1"
+}
+
