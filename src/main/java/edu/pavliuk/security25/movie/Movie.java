@@ -17,7 +17,7 @@ import java.util.Objects;
 @Setter
 @Builder
 @ToString
-public class Movie {
+public class Movie  extends AuditMetaData{
 
     @Id
     private String id;
