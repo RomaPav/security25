@@ -6,7 +6,11 @@ package edu.pavliuk.security25.movie;/*
     @since 09.03.2025 - 17.14
 */
 
+import edu.pavliuk.security25.auth.AuthenticationRequest;
+import edu.pavliuk.security25.auth.AuthenticationResponse;
+import edu.pavliuk.security25.auth.AuthenticationService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -71,4 +75,12 @@ public class MovieRestController {
     public String helloStranger() {
         return "Hello, Stranger";
     }
+//
+//
+//    private final AuthenticationService authenticationService;
+//
+//    @PostMapping("'/authenticate")
+//    public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request) {
+//        return ResponseEntity.ok(authenticationService.authenticate(request)) ;
+//    }
 }
