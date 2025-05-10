@@ -6,11 +6,7 @@ package edu.pavliuk.security25.movie;/*
     @since 09.03.2025 - 17.14
 */
 
-import edu.pavliuk.security25.auth.AuthenticationRequest;
-import edu.pavliuk.security25.auth.AuthenticationResponse;
-import edu.pavliuk.security25.auth.AuthenticationService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,49 +20,49 @@ public class MovieRestController {
     private final MovieService movieService;
 
     @GetMapping("/")
-    @PreAuthorize("hasAnyRole('USER', 'ADMIN', 'UNKNOWN')")
+    @PreAuthorize("hasAnyAuthority('USER', 'ADMIN', 'UNKNOWN')")
     public List<Movie> getMovies() {
         return movieService.getAllMovies();
     }
 
     @PostMapping("/")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public Movie createMovie(@RequestBody Movie movie) {
         return movieService.createMovie(movie);
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+    @PreAuthorize("hasAnyAuthority('USER', 'ADMIN')")
     public Movie getMovie(@PathVariable String id) {
         return movieService.getMovieById(id);
     }
 
     @PutMapping("/")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public Movie updateMovie(@RequestBody Movie movie) {
         return movieService.updateMovie(movie);
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public void deleteMovie(@PathVariable String id) {
         movieService.deleteMovie(id);
     }
 
     @GetMapping("/user")
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasAuthority('USER')")
     public String helloUser() {
         return "Hello, User";
     }
 
     @GetMapping("/admin")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String helloAdmin() {
         return "Hello, Admin";
     }
 
     @GetMapping("/unknown")
-    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+    @PreAuthorize("hasAnyAuthority('USER', 'ADMIN')")
     public String helloUnknown() {
         return "Hello, Unknown";
     }
